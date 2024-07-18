@@ -1,212 +1,53 @@
-# <a href="https://flexy-admin-nextjs-free.vercel.app/">Flexy Admin Nextjs Free</a>
-Flexy NextJs Admin Dashboard with App Directory
-
-<!-- Main image of Template -->
-<a target="_blank" href="https://www.wrappixel.com/templates/flexy-next-js-free-admin-template/">
-  <img src="https://www.wrappixel.com/wp-content/uploads/edd/2022/01/flexy-nextjs-free.jpg" />
-</a>
 
 
-# Compare with Premium Version 🌓
+## University Connect
+ 
+**University Connect** is a dedicated social media platform designed exclusively for university students. The platform aims to foster a sense of community, enhance academic collaboration, and provide a space for students to connect, share, and grow together within their academic environment. University Connect will serve as a comprehensive digital hub, integrating features tailored to the unique needs of university students.
 
-<table>
-<thead>
-<tr>
-<th>Flexy Free NextJs Admin Version</th>
-<th>Flexy NextJs Admin Version</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>
-    <a href="https://flexy-admin-nextjs-free.vercel.app/">Live Preview</a>
-  </td>
-  <td>
-  <a href="https://flexy-next-js-dashboard.vercel.app/dashboards/dashboard1">Live Preview</a>
-  </td>
-</tr>
-<tr>
-  <td>
-      <a href="https://www.wrappixel.com/templates/flexy-next-js-free-admin-template/">Download Now</a>
-  </td>
-  <td>
-    <a href="https://www.wrappixel.com/templates/flexy-nextjs-dashboard-material-ui/?ref=33">Purchase Now</a>
-  </td>
-</tr>
-<tr>
-  <td>
-  1 Basic Dashboard
-  </td>
-  <td>
-  3+ Stunning Dashboards
-  </td>
-</tr>
-<tr>
-  <td>
-  -
-  </td>
-  <td>
-  Dashboard Figma Files
-  </td>
-</tr>
-<tr>
-  <td>
-  Material UI v5.6.1
-  </td>
-  <td>
-  Material UI v5.6.1
-  </td>
-</tr>
-<tr>
-  <td>
-  Fully Responsive Pages
-  </td>
-  <td>
-  Fully Responsive Pages
-  </td>
-</tr>
-<tr>
-  <td>
-  8+ Pages Template
-  </td>
-  <td>
-  50+ Page Templates
-  </td>
-</tr>
-<tr>
-  <td>
-  7+ UI Components
-  </td>
-  <td>
-  40+ UI Components
-  </td>
-</tr>
-<tr>
-  <td>
-  No Documentation
-  </td>
-  <td>
-  Documentation Provided
-  </td>
-</tr>
-<tr>
-  <td>
-  Easy To Customize
-  </td>
-  <td>
-  Easy To Customize
-  </td>
-</tr>
-<tr>
-  <td>
-  -
-  </td>
-  <td>
-  Right-to-Left(RTL) Verion
-  </td>
-</tr>
-<tr>
-  <td>
-  -
-  </td>
-  <td>
-  7+ Integrated Plugins
-  </td>
-</tr>
-<tr>
-  <td>
-  -
-  </td>
-  <td>
-  5+ Ready to Use App
-  </td>
-</tr>
-<tr>
-  <td>
-  -
-  </td>
-  <td>
-  1 Year Premium Support
-  </td>
-</tr>
-</tbody>
-</table>
+####  Key Features
+--- 
+* Profile Creation
+	* Students can create detailed profiles showcasing their academic achievements, interests, and extracurricular activities.
+* Discussion Categories
+	* A wide range of discussion categories, including technology, health, education, hobbies, and more, allowing users to easily find topics of interest.
+* Threaded Discussions
+	* Structured and easy-to-follow threaded discussions enabling users to respond directly to specific posts and keep conversations organized.
+* Resource Library
+	* A centralized repository for academic resources, including lecture notes, study guides, and reference materials that can be shared and accessed by students.
+* Search and Filtering
+	* Advanced search and filtering options to help users quickly find relevant discussions and content.
+* Moderation Tools
+	* Robust moderation tools to ensure a respectful and constructive community environment, including reporting and blocking features.
+* Event Management
+	* The system will facilitate event management, enabling students to organize reunions, professional networking events, workshops, and seminars. Students can RSVP for events, and event organizers can track attendance.
+*  Student Directory
+	* The system will maintain a comprehensive directory of all registered students, searchable by year, major, and other relevant filters. This directory will enable students to find and connect with classmates.
+* Students Insights and Surveys
+	* Conducting surveys and gathering feedback from students will be made easy through the platform. This valuable data can help the institution make improvements and tailor services to better meet the needs of students.
+* Admin Dashboard
+	* Administrators have access to a comprehensive dashboard to manage user accounts, events, and overall system settings.
 
-# Upgrade to Premium version
-
-<a target="_blank" href="https://www.wrappixel.com/templates/flexy-nextjs-dashboard-material-ui/?ref=33">
-  <img src="https://www.wrappixel.com/wp-content/uploads/edd/2024/05/flexy-nextjs-admin-wpn.jpg" alt="">
-</a>
-<p>
-  Checkout our premium version of Flexy NextJs Admin Dashboard Template for lots more features and ready to use page templates.<br>
-  <a href="https://flexy-next-js-dashboard.vercel.app/dashboards/dashboard1">Check Live Preview</a> | <a href="https://www.wrappixel.com/templates/flexy-nextjs-dashboard-material-ui/?ref=33">Download</a>
-</p>
-
-<!-- Versions of Template -->
-# Versions
-<table>
-<thead>
-<tr>
-<th>Next Js</th>
-<th>Angular</th>
-<th>React Js</th>
-<th>Vue Js</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-  <a href="https://www.wrappixel.com/templates/flexy-nextjs-dashboard-material-ui/?ref=33" width="150px">
-    <img src="https://www.wrappixel.com/wp-content/uploads/edd/2024/05/flexy-nextjs-admin-wpn.jpg" alt="" style="max-width:150px;">
-  </a>
-</td>
-<td>
-  <a href="https://www.wrappixel.com/templates/flexy-material-angular-admin/?ref=33" rel="nofollow" width="150px">
-    <img src="https://www.wrappixel.com/wp-content/uploads/edd/2024/05/flexy-angular-material-admin-wpn.jpg" alt="" style="max-width:150px;">
-  </a>
-</td>
-<td>
-  <a href="https://www.wrappixel.com/templates/flexy-react-material-dashboard-admin/?ref=33" rel="nofollow" width="150px">
-    <img src="https://www.wrappixel.com/wp-content/uploads/edd/2024/05/flexy-react-admin-wpn.jpg" alt="" style="max-width:150px;">
-  </a>
-</td>
-<td>
-  <a href="https://www.wrappixel.com/templates/flexy-vuetify-dashboard/?ref=33" rel="nofollow" width="150px">
-    <img src="https://www.wrappixel.com/wp-content/uploads/edd/2024/05/flexy-vuetify-vuejs-admin-wpn.jpg" alt="" style="max-width:150px;">
-  </a>
-</td>
-</td>
-  
-</tr>
-</tbody>
-</table>
+#### Technical Details
+---
+* Use Java and Spring Boot framework for the backend project.
+* Use React framework for the frontend project.
+* Use n-tier software architecture model.
+* Populate your database with dummy data using `data.sql`.
+	* Prepare your dummy data for testing and presentation.
+* If necessary, change isolation levels.
+* If necessary, change Fetch mode.
 
 
+#### Submission
+---
+* Submit a detailed project plan for your daily performance (day/task/time) and submit it with your code.
+* Project will be evaluated based on your code quality. It is possible that I will need to schedule meetings with some students about their source-code.
 
-
-
-<!-- Useful Links of Template -->
-# Useful Links
-- <p><a href="https://www.wrappixel.com/">Admin Theme</a> from Wrappixel</p>
-- <p><a href="https://www.wrappixel.com/templates/materialpro/">Bootstrap Themes</a> from Wrappixel</p>
-- <p><a href="https://www.wrappixel.com/templates/materialpro-lite/">Free Bootstrap Admin Templates</a> from Wrappixel</p>
-- <p><a href="https://www.wrappixel.com/templates/materialpro-react-redux-admin/">React Bootstrap Template</a> from Wrappixel</p>
-- <p><a href="https://www.wrappixel.com/templates/materialpro-vuetify-admin/">Vuejs Templates</a> from Wrappixel</p>
-
-
-<!-- Licensing of Template -->
-# Licensing
-- <p>Copyright 2024 Wrappixel <a href="https://www.wrappixel.com/">https://wrappixel.com/</a></p>
-- <p>Licensed under MIT <a href="https://www.wrappixel.com/license/">https://wrappixel.com/license/</a></p>
-
-
-<!-- Social Media of Adminmart -->
-# Social Media 👭🏼
-- <p>Facebook: <a href="https://www.facebook.com/wrappixel">https://www.facebook.com/wrappixel</a></p>
-- <p>Linkedin: <a href="https://www.linkedin.com/company/wrappixel/">https://www.linkedin.com/company/wrappixel/</a></p>
-- <p>Github: <a href="https://github.com/wrappixel">https://github.com/wrappixel</a></p>
-- <p>Twitter: <a href="https://twitter.com/wrappixel">https://twitter.com/wrappixel</a></p>
-- <p>Medium: <a href="https://medium.com/wrappixel">https://medium.com/wrappixel</a></p>
-- <p>Discord: <a href="https://discord.com/invite/eMzE8F6Wqs">https://discord.com/invite/eMzE8F6Wqs</a></p>
-- <p>Youtube: <a href="https://www.youtube.com/channel/UCdFDlrhIchtxF8EmxejUPGQ">https://www.youtube.com/channel/UCdFDlrhIchtxF8EmxejUPGQ</a></p>
-
+#### Important Notes
+---
+* You are not allowed to share codes with your classmates. If detected, you will get NC.
+ 
+* Remember to respect the code honor submission policy. All written code must be original. Presenting something as one’s own work when it came from another source is plagiarism and is forbidden.
+    
+* Plagiarism is a very serious thing in all American academic institutions and is guarded against vigilantly by every professor.
+ 
