@@ -1,28 +1,35 @@
 'use client';
 import { Button, Grid, InputLabel, MenuItem, Select, Stack, TextField } from "@mui/material";
 import BaseCard from '@/app/(DashboardLayout)/components/shared/BaseCard';
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import ThreadService from "@/app/services/ThreadService";
 import DiscussionService from "@/app/services/DiscussionService";
 import { useRouter } from "next/navigation";
 
+export interface ThreadDTO {
+  thread: {
+    comment: string;
+  },
+  comment: string;
+  discussion_id: number;
+}
+
 export default function CreateThread(props: any) {
   
   const router = useRouter();
-  const [thread, setThread] = useState({} as any);
+  const [thread, setThread] = useState({thread: {comment: ''}} as ThreadDTO);
   const [discussions, setDiscussion] = useState([] as any);
-  const createEvent = async () => {
-      const resp = await ThreadService.create();
-      if (resp) {
-        setThread(resp);
-      }
-  }
 
   const handleSelectChange = (e: any) => {
-    thread.discusion = e.target.value;
+    thread.discussion_id = e.target.value;
     setThread(thread);
   }
 
+  const handleCommentChange = (e: any) => {
+    thread.thread.comment = e.target.value;
+    setThread(thread);
+  }
+  
   const getDiscussion = async () => {
     const resp = await DiscussionService.list();
     console.log('resp:', resp);
@@ -49,20 +56,21 @@ export default function CreateThread(props: any) {
         </Button>
       </Grid>
         <Grid item xs={12} lg={12}>
-          <BaseCard title="Create New Category:">
+          <BaseCard title="Create New Thread:">
             <>
             <Stack spacing={3}>
               <TextField
-                id="title"
-                label="title"
+                id="comment"
+                label="comment"
                 variant="outlined"
-                value={thread?.title}
+                value={thread.comment}
+                onChange={handleCommentChange}
               />
               <InputLabel id="discusion">Select Discusion Topic</InputLabel>
               <Select
                 labelId="discusion"
                 id="discusion"
-                value={thread.discusion}
+                value={thread?.discussion_id}
                 label="discusion"
                 onChange={handleSelectChange}
               >

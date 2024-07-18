@@ -32,36 +32,42 @@ export default function EditEvent(props: any) {
           <BaseCard title="Edit New Event:">
             <>
             <Stack spacing={3}>
+            <label htmlFor="name">Name</label>
               <TextField
-                id="name-basic"
-                label="Name"
+                id="name"
                 variant="outlined"
-                defaultValue={event?.name}
+                value={event?.name}
+                onChange={(e) => setEvent({...event, name: e.target.value})}
               />
+              <label htmlFor="description">Description</label>
               <TextField
-                id="outlined-multiline-static"
-                label="Description"
+                id="description"
                 multiline
                 rows={4}
-                defaultValue={event?.description}
+                value={event?.description}
+                onChange={(e) => setEvent({...event, description: e.target.value})}
               />
+              <label htmlFor="location">Location</label>
               <TextField
-                id="outlined-multiline-static"
-                label="Location"
+                id="location"
                 variant="outlined"
-                defaultValue={event?.location}
+                value={event?.location}
+                onChange={(e) => setEvent({...event, location: e.target.value})}
               />
+              <label htmlFor="startdate">StartDate</label>
               <TextField
-                id="outlined-multiline-static"
-                label="StartDate"
+                id="startdate"
                 variant="outlined"
+                value={event?.startDate}
                 defaultValue={event?.startDate}
+                onChange={(e) => setEvent({...event, startDate: e.target.value})}
               />
+               <label htmlFor="enddate">EndDate</label>
                <TextField
-                id="outlined-multiline-static"
-                label="EndDate"
+                id="enddate"
                 variant="outlined"
-                defaultValue={event?.endDate}
+                value={event?.endDate}
+                onChange={(e) => setEvent({...event, endDate: e.target.value})}
               />
               <Table>
               <TableHead> <h2>Attendess:</h2>

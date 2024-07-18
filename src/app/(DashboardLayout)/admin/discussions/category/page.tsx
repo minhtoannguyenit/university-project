@@ -210,6 +210,7 @@ export default function CreateCategory(props: any) {
                 label="title"
                 variant="outlined"
                 value={category?.title}
+                onChange={(e) => setCategory({...category, title: e.target.value})}
               />
             </Stack>
             <br />

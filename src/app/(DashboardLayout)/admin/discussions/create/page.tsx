@@ -6,13 +6,21 @@ import DiscussionService from "@/app/services/DiscussionService";
 import CategoryService from "@/app/services/CategoryService";
 import { useRouter } from "next/navigation";
 import Select from "@mui/material/Select";
-import SelectInput from "@mui/material/Select/SelectInput";
+
+export interface DiscussionDTO {
+  discussion: {
+    content: string;
+  };
+  content: string;
+  category_id: number;
+
+}
 
 export default function CreateDiscussion(props: any) {
   
   const router = useRouter();
-  const [event, setEvent] = useState({} as any);
-  const [categories, setCategories] = useState( [] as any);
+  const [discussion, setEvent] = useState({discussion: {content: ''}} as DiscussionDTO);
+  const [categories, setCategories] = useState([] as any);
   const getCategories = async () => {
     const resp = await CategoryService.list();
     console.log('resp:', resp);
@@ -26,18 +34,18 @@ export default function CreateDiscussion(props: any) {
   }, []);
 
   const handleSelectChange = (e: any) => {
-    event.category = e.target.value;
-    setEvent(event);
+    discussion.category_id = e.target.value;
+    setEvent(discussion);
   };
 
   const handleContentChange = (e: any) => {
-    event.content = e.target.value;
-    setEvent(event);
+    discussion.discussion.content = e.target.value;
+    setEvent(discussion);
   }
   
   const submitEvent = async (e: any) => {
-    console.log('event:', e, event);
-    await DiscussionService.create(event);
+    console.log('discussion:', e, discussion);
+    await DiscussionService.create(discussion);
     alert('Event created successfully');
   }
 
@@ -56,14 +64,14 @@ export default function CreateDiscussion(props: any) {
                 id="content"
                 label="content"
                 variant="outlined"
-                value={event?.content}
+                value={discussion?.content}
                 onChange={handleContentChange}
               />
               <InputLabel id="category">Select Category</InputLabel>
               <Select
                 labelId="category"
                 id="category"
-                value={event.category}
+                value={discussion.category_id}
                 label="category"
                 onChange={handleSelectChange}
               >

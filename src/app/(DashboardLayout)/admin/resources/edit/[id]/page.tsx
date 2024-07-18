@@ -47,15 +47,9 @@ export default function EitResource(props: any) {
           <BaseCard title="Edit New Resource:">
             <>
             <Stack spacing={3}>
-              <TextField
-                id="name-basic"
-                label="Name"
-                variant="outlined"
-                defaultValue={resource?.name}
-              />
+            <label htmlFor="description">Description</label>
               <TextField
                 id="outlined-multiline-static"
-                label="Description"
                 multiline
                 rows={4}
                 defaultValue={resource?.description}

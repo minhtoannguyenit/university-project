@@ -19,22 +19,36 @@ const VisuallyHiddenInput = styled('input')({
   width: 1,
 });
 
+export interface ResourceDTO {
+  desc: string;
+  file: File
+}
+
 const CreateResource = () => {
   const router = useRouter();
 
-  const [resource, setResource] = useState({} as any);
-  const getResource = async () => {
-      const resp = await ResourceService.create();
-      console.log('resp:', resp);
-      if (resp) {
-        setResource(resp);
-      }
+  const [resource, setResource] = useState({ desc: '', file: null } as unknown as ResourceDTO);
+  const handleFileChange = (e: any) => {
+    const file = e.target.files[0];
+    setResource((prevResource: any) => ({
+      ...prevResource,
+      file: file
+    }));
+  };
+
+  const submitEvent = async (e: any) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append('desc', resource.desc);
+    formData.append('file', resource.file);
+  
+    console.log('formData:', formData);
+    console.log('resource:', resource);
+
+    await ResourceService.create(formData);
+    alert('Resource created successfully');
   }
-
-  useEffect(() => {
-    getResource();
-  }, []);
-
 
   return (
       <Grid container spacing={3}>
@@ -47,18 +61,13 @@ const CreateResource = () => {
           <BaseCard title="Create New Resource:">
             <>
             <Stack spacing={3}>
+              <label htmlFor="description">Description</label>
               <TextField
-                id="name-basic"
-                label="Name"
-                variant="outlined"
-                onChange={(e) => setResource({...resource, name: e.target.value})}
-              />
-              <TextField
-                id="outlined-multiline-static"
-                label="Description"
+                id="description"
+                name="description"
                 multiline
                 rows={4}
-                onChange={(e) => setResource({...resource, description: e.target.value})}
+                onChange={(e) => setResource({...resource, desc: e.target.value})}
               />
             <Button
               component="label"
@@ -68,11 +77,11 @@ const CreateResource = () => {
               startIcon={<CloudUploadIcon />}
             >
               Upload file
-              <VisuallyHiddenInput type="file" />
+              <VisuallyHiddenInput type="file" name="file" onChange={handleFileChange} />
             </Button>
             </Stack>
             <br />
-            <Button variant="contained" href="#contained-buttons">
+            <Button variant="contained" href="#contained-buttons" onClick={submitEvent}>
               Submit
             </Button>
             </>
