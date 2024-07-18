@@ -108,9 +108,9 @@ const DiscussionPerformance = (props: any) => {
                   <IconButton color="secondary" aria-label="view" onClick={handleClickOpen}>
                     <ViewAgenda />
                   </IconButton>
-                  <IconButton color="secondary" aria-label="edit" onClick={() => router.push('/admin/discussions/edit/' + discussion.id)}>
+                  {/* <IconButton color="secondary" aria-label="edit" onClick={() => router.push('/admin/discussions/edit/' + discussion.id)}>
                     <EditIcon />
-                  </IconButton>
+                  </IconButton> */}
                   <IconButton aria-label="delete" onClick={() => {deleteDiscussionClicked(discussion.id)}}>
                     <DeleteIcon />
                   </IconButton>

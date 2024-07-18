@@ -12,28 +12,29 @@ import {
   Fab,
   styled,
   IconButton,
+  Rating,
 } from "@mui/material";
 import BaseCard from "../shared/DashboardCard";
 import Link from "next/link";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useRouter } from "next/navigation";
-import EventService from "@/app/services/EventService";
+import SurveyService from "@/app/services/SurveyService";
 
 export interface Event {
   id: number;
-  name: string;
+  title: string;
   description: string;
-  location: string;
-  startDate: string;
-  endDate: string;
-  attendees: [] | any;
+  rate: number;
+  comment: string;
+  name: string;
+
 };
 
 const EventPerformance = (props: any) => {
-  const [events, setEvents] = React.useState<Event[]>([]);
+  const [surveys, setEvents] = React.useState<Event[]>([]);
   const getEventList = async () => {
-    const resp = await EventService.list();
+    const resp = await SurveyService.list();
     console.log('resp:', resp);
     if (resp) {
       setEvents(resp || []);
@@ -44,7 +45,7 @@ const EventPerformance = (props: any) => {
   }, []);
 
   const deleteEventClicked = async (id: number) => {
-    await EventService.delete(id);
+    await SurveyService.delete(id);
     getEventList();
   }
 
@@ -63,28 +64,28 @@ const EventPerformance = (props: any) => {
           <TableHead>
             <TableRow>
               <TableCell>ID</TableCell>
-              <TableCell>Name</TableCell>
+              <TableCell>Title</TableCell>
               <TableCell>Description</TableCell>
-              <TableCell>Location</TableCell>
-              <TableCell>Duration Date</TableCell>
-              <TableCell>Attendees</TableCell>
+              <TableCell>Rating</TableCell>
+              <TableCell>Comment</TableCell>
+              <TableCell>Name</TableCell>
               <TableCell>Action</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {events.map((event) => (
-              <TableRow key={event.id}>
-                <TableCell>{event.id}</TableCell>
-                <TableCell>{event.name}</TableCell>
-                <TableCell>{event.description}</TableCell>
-                <TableCell>{event.location}</TableCell>
-                <TableCell>{event.startDate} - {event.endDate}</TableCell>
-                <TableCell>{event.attendees.length || 0}</TableCell>
+            {surveys.map((survey) => (
+              <TableRow key={survey.id}>
+                <TableCell>{survey.id}</TableCell>
+                <TableCell>{survey.title}</TableCell>
+                <TableCell>{survey.description}</TableCell>
+                <TableCell><Rating name="half-rating-read" defaultValue={survey.rate} readOnly /></TableCell>
+                <TableCell>{survey.comment}</TableCell>
+                <TableCell>{survey.name}</TableCell>
                 <TableCell>
-                  <IconButton color="secondary" aria-label="edit" onClick={() => router.push('/admin/events/edit/' + event.id)}>
+                  {/* <IconButton color="secondary" aria-label="edit" onClick={() => router.push('/admin/surveys/edit/' + survey.id)}>
                     <EditIcon />
-                  </IconButton>
-                  <IconButton aria-label="delete" onClick={() => {deleteEventClicked(event.id)}}>
+                  </IconButton> */}
+                  <IconButton aria-label="delete" onClick={() => {deleteEventClicked(survey.id)}}>
                     <DeleteIcon />
                   </IconButton>
                 </TableCell>

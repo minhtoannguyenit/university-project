@@ -51,12 +51,14 @@ const CreateResource = () => {
                 id="name-basic"
                 label="Name"
                 variant="outlined"
+                onChange={(e) => setResource({...resource, name: e.target.value})}
               />
               <TextField
                 id="outlined-multiline-static"
                 label="Description"
                 multiline
                 rows={4}
+                onChange={(e) => setResource({...resource, description: e.target.value})}
               />
             <Button
               component="label"

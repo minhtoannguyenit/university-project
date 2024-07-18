@@ -9,15 +9,9 @@ export default function CreateEvent(props: any) {
   
   const router = useRouter();
   const [event, setEvent] = useState({} as any);
-  const createEvent = async () => {
-      const resp = await EventService.create();
-      if (resp) {
-        setEvent(resp);
-      }
-  }
-
+  
   useEffect(() => {
-    createEvent();
+    // createEvent();
   }, [props.params.id]);
   
   const submitEvent = async (e: any) => {
@@ -42,6 +36,7 @@ export default function CreateEvent(props: any) {
                 label="Name"
                 variant="outlined"
                 value={event?.name}
+                onChange={(e) => setEvent({...event, name: e.target.value})}
               />
               <TextField
                 id="outlined-multiline-static"
@@ -49,12 +44,14 @@ export default function CreateEvent(props: any) {
                 multiline
                 rows={4}
                 value={event?.description}
+                onChange={(e) => setEvent({...event, description: e.target.value})}
               />
               <TextField
                 id="outlined-multiline-static"
                 label="Location"
                 variant="outlined"
                 value={event?.location}
+                onChange={(e) => setEvent({...event, location: e.target.value})}
               />
               <TextField
                 id="outlined-multiline-static"
@@ -62,6 +59,7 @@ export default function CreateEvent(props: any) {
                 variant="outlined"
                 value={event?.startDate}
                 defaultValue={event?.startDate}
+                onChange={(e) => setEvent({...event, startDate: e.target.value})}
               />
                <TextField
                 id="outlined-multiline-static"
@@ -69,6 +67,7 @@ export default function CreateEvent(props: any) {
                 variant="outlined"
                 value={event?.endDate}
                 defaultValue={event?.endDate}
+                onChange={(e) => setEvent({...event, endDate: e.target.value})}
               />
             </Stack>
             <br />

@@ -71,7 +71,7 @@ export default function CreateEvent(props: any) {
                 label="First Name"
                 variant="outlined"
                 value={user?.firstName}
-                onChange={handleChange}
+                onChange={(e) => setUser({...user, firstName: e.target.value})}
               />
               <label htmlFor="lastName">Last Name</label>
               <TextField
@@ -79,21 +79,21 @@ export default function CreateEvent(props: any) {
                 label="Last Name"
                 variant="outlined"
                 value={user?.lastName}
-                onChange={handleChange}
+                onChange={(e) => setUser({...user, lastName: e.target.value})}
               />
               <label htmlFor="email">Email</label>
               <TextField
                 id="email"
                 label="Email"
                 value={user?.email}
-                onChange={handleChange}
+                onChange={(e) => setUser({...user, email: e.target.value})}
               />
               <label htmlFor="username">Username</label>
               <TextField
                 id="username"
                 label="Username"
                 value={user?.username}
-                onChange={handleChange}
+                onChange={(e) => setUser({...user, username: e.target.value})}
               />
               <InputLabel id="role">User Role:</InputLabel>
               <Select
@@ -101,7 +101,7 @@ export default function CreateEvent(props: any) {
                 id="role"
                 value={user.role}
                 label="role"
-                onChange={handleSelectRole}
+                onChange={e => setUser({...user, role: e.target.value})}
               >
                 <MenuItem key={1} value="ADMIN">ADMIN</MenuItem>
                 <MenuItem key={2} value="STUDENT">STUDENT</MenuItem>
@@ -113,7 +113,7 @@ export default function CreateEvent(props: any) {
                 id="status"
                 value={user.status}
                 label="status"
-                onChange={handleSelectStatus}
+                onChange={e => setUser({...user, status: e.target.value})}
               >
                 <MenuItem key={1} value="INACTIVE">INACTIVE</MenuItem>
                 <MenuItem key={2} value="ACTIVE">ACTIVE</MenuItem>

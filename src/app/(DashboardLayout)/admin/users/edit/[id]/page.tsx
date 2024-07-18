@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import UserService from "../../../../../services/UserService";
 
 
-export default function EditEvent(props: any) {
+export default function EditUser(props: any) {
   const { id } = useParams();
   
   const router = useRouter();
@@ -65,6 +65,7 @@ export default function EditEvent(props: any) {
               // label="First Name"
               variant="outlined"
               value={user?.firstName}
+              onChange={(e) => setUser({...user, firstName: e.target.value})}
             />
             <label htmlFor="lastName">Last name</label>
             <TextField
@@ -72,18 +73,21 @@ export default function EditEvent(props: any) {
               // label="Last Name"
               variant="outlined"
               value={user?.lastName}
+              onChange={(e) => setUser({...user, lastName: e.target.value})}
             />
             <label htmlFor="email">Email</label>
             <TextField
               id="email"
               // label="Email"
               value={user?.email}
+              onChange={(e) => setUser({...user, email: e.target.value})}
             />
             <label htmlFor="username">Username</label>
             <TextField
               id="username"
               // label="Username"
               value={user?.username}
+              onChange={(e) => setUser({...user, username: e.target.value})}
             />
             <InputLabel id="role">User Role:</InputLabel>
               <Select
@@ -91,6 +95,7 @@ export default function EditEvent(props: any) {
                 id="role"
                 value={user.role}
                 label="role"
+                defaultValue={user.role}
                 onChange={handleSelectRole}
               >
                 <MenuItem key={1} value="ADMIN">ADMIN</MenuItem>
@@ -103,6 +108,7 @@ export default function EditEvent(props: any) {
                 id="status"
                 value={user.status}
                 label="status"
+                defaultValue={user.status}
                 onChange={handleSelectStatus}
               >
                 <MenuItem key={1} value="INACTIVE">INACTIVE</MenuItem>
@@ -111,7 +117,7 @@ export default function EditEvent(props: any) {
               </Select>
           </Stack>
           <br />
-          <Button variant="contained" onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => submitEvent(user)}>
+          <Button variant="contained" onClick={submitEvent}>
             Submit
           </Button>
           </>
