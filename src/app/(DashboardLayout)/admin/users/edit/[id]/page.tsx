@@ -1,5 +1,5 @@
 'use client';
-import { Button, Grid, Select, Stack, TextField } from "@mui/material";
+import { Button, Grid, InputLabel, MenuItem, Select, Stack, TextField } from "@mui/material";
 import BaseCard from '@/app/(DashboardLayout)/components/shared/BaseCard';
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from "react";
@@ -30,7 +30,23 @@ export default function EditEvent(props: any) {
     }
   }
 
-  
+  const handleSelectStatus = (e: any) => {
+    console.log('e:', e);
+    const { value } = e.target;
+    setUser((prevUser: any) => ({
+      ...prevUser,
+      status: value
+    }));
+  }
+
+  const handleSelectRole = (e: any) => {
+    console.log('e:', e);
+    const { value } = e.target;
+    setUser((prevUser: any) => ({
+      ...prevUser,
+      role: value
+    }));
+  }
 
   return (
     <Grid container spacing={3}>
@@ -69,21 +85,30 @@ export default function EditEvent(props: any) {
               // label="Username"
               value={user?.username}
             />
-            <label htmlFor="role">
-             User Role:
-            </label>
-            <Select defaultValue="STUDENT" id="role" name="role">
-              <option value="ADMIN">ADMIN</option>
-              <option value="STUDENT">STUDENT</option>
-            </Select>
-            <label htmlFor="status">
-             User Status:
-            </label>
-            <Select defaultValue="INACTIVE" id="status" name="status">
-              <option value="INACTIVE">INACTIVE</option>
-              <option value="ACTIVE">ACTIVE</option>
-              <option value="BLOCKED">BLOCKED</option>
-            </Select>
+            <InputLabel id="role">User Role:</InputLabel>
+              <Select
+                labelId="role"
+                id="role"
+                value={user.role}
+                label="role"
+                onChange={handleSelectRole}
+              >
+                <MenuItem key={1} value="ADMIN">ADMIN</MenuItem>
+                <MenuItem key={2} value="STUDENT">STUDENT</MenuItem>
+                
+              </Select>
+              <InputLabel id="status">User Status</InputLabel>
+              <Select
+                labelId="status"
+                id="status"
+                value={user.status}
+                label="status"
+                onChange={handleSelectStatus}
+              >
+                <MenuItem key={1} value="INACTIVE">INACTIVE</MenuItem>
+                <MenuItem key={2} value="ACTIVE">ACTIVE</MenuItem>
+                <MenuItem key={3} value="BLOCKED">BLOCKED</MenuItem>
+              </Select>
           </Stack>
           <br />
           <Button variant="contained" onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => submitEvent(user)}>

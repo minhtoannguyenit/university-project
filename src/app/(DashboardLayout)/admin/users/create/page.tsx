@@ -1,5 +1,5 @@
 'use client';
-import { Button, Grid, Select, Stack, TextField } from "@mui/material";
+import { Button, Grid, InputLabel, MenuItem, Select, Stack, TextField } from "@mui/material";
 import BaseCard from '@/app/(DashboardLayout)/components/shared/BaseCard';
 import { useEffect, useState } from "react";
 import EventService from "@/app/services/EventService";
@@ -29,6 +29,24 @@ export default function CreateEvent(props: any) {
       [id]: value
     }));
   };
+
+  const handleSelectStatus = (e: any) => {
+    console.log('e:', e);
+    const { value } = e.target;
+    setUser((prevUser: any) => ({
+      ...prevUser,
+      status: value
+    }));
+  }
+
+  const handleSelectRole = (e: any) => {
+    console.log('e:', e);
+    const { value } = e.target;
+    setUser((prevUser: any) => ({
+      ...prevUser,
+      role: value
+    }));
+  }
   
   const submitEvent = async (e: any) => {
     console.log('user:', user);
@@ -77,20 +95,29 @@ export default function CreateEvent(props: any) {
                 value={user?.username}
                 onChange={handleChange}
               />
-              <label htmlFor="role">
-               User Role:
-              </label>
-              <Select defaultValue="STUDENT" id="role" name="role" onChange={handleChange}>
-                <option value="ADMIN">ADMIN</option>
-                <option value="STUDENT">STUDENT</option>
+              <InputLabel id="role">User Role:</InputLabel>
+              <Select
+                labelId="role"
+                id="role"
+                value={user.role}
+                label="role"
+                onChange={handleSelectRole}
+              >
+                <MenuItem key={1} value="ADMIN">ADMIN</MenuItem>
+                <MenuItem key={2} value="STUDENT">STUDENT</MenuItem>
+                
               </Select>
-              <label htmlFor="status">
-               User Status:
-              </label>
-              <Select defaultValue="INACTIVE" id="status" name="status" onChange={handleChange}>
-                <option value="INACTIVE">INACTIVE</option>
-                <option value="ACTIVE">ACTIVE</option>
-                <option value="BLOCKED">BLOCKED</option>
+              <InputLabel id="status">User Status</InputLabel>
+              <Select
+                labelId="status"
+                id="status"
+                value={user.status}
+                label="status"
+                onChange={handleSelectStatus}
+              >
+                <MenuItem key={1} value="INACTIVE">INACTIVE</MenuItem>
+                <MenuItem key={2} value="ACTIVE">ACTIVE</MenuItem>
+                <MenuItem key={3} value="BLOCKED">BLOCKED</MenuItem>
               </Select>
             </Stack>
             <br />
